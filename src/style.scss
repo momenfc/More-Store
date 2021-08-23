@@ -1,0 +1,51 @@
+// HOME
+.filter-bar {
+  //   background-color: rgb(231, 231, 231);
+}
+
+body {
+}
+
+main {
+  display: grid;
+  align-items: center;
+}
+
+.App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.navbar {
+  .cart-btn {
+    margin-right: 2rem;
+    margin-left: auto;
+    position: relative;
+
+    svg {
+      font-size: 1.7rem;
+      color: white;
+    }
+    .badge {
+      font-size: 0.8rem;
+      position: absolute;
+      top: -0.4rem;
+      right: -0.9rem;
+    }
+  }
+}
+
+.pagination {
+  justify-content: center;
+  li {
+    margin: 0 3px;
+  }
+  .active {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+  button:disabled {
+    opacity: 0.5;
+  }
+}

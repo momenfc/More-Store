@@ -1,12 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Pagination from "../../common/Pagination";
 import Spinner from "../../common/Spinner";
 import SingleProduct from "./SingleProduct";
 import _ from "lodash";
 
 const Products = () => {
-  const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const ui = useSelector((state) => state.ui);
   // PRODUCTS AFTER FILTER
@@ -27,9 +26,11 @@ const Products = () => {
   return (
     <div className="products my-4" style={{ minHeight: "50vh" }}>
       <div className=" container-lg">
-        <div className="row g-4">{Spinner() || handleProducts}</div>
+        <div className="row g-4 justifay-content-start">
+          {Spinner() || handleProducts}
+        </div>
         {productsPagination.length ? (
-          <Pagination list={productsPagination} />
+          <Pagination list={productsPagination} countPages={proChunk.length} />
         ) : null}
       </div>
     </div>

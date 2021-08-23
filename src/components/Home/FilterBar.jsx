@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFilter } from "../../store/reducers/products";
+import { changePage } from "../../store/reducers/ui";
 
 const FilterBar = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,10 @@ const FilterBar = () => {
             <select
               className="form-select text-capitalize"
               aria-label="Default select example"
-              onChange={(e) => dispatch(changeFilter(e.target.value))}
+              onChange={(e) => {
+                dispatch(changeFilter(e.target.value));
+                dispatch(changePage(1));
+              }}
             >
               {categorys.map((cat) => (
                 <option key={cat} value={cat}>

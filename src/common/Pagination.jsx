@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePage, nextPage, prevPage } from "../store/reducers/ui";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
-const Pagination = ({ list }) => {
+const Pagination = ({ countPages }) => {
   const dispatch = useDispatch();
   const ui = useSelector((state) => state.ui);
-  const countPage = list.length;
 
   return (
     <nav className="mt-4">
@@ -21,7 +20,7 @@ const Pagination = ({ list }) => {
               <FaChevronLeft />
             </button>
           </li>
-          {Array(countPage)
+          {Array(countPages)
             .fill()
             .map((_, i) => (
               <li key={i} className="page-item">
@@ -39,7 +38,7 @@ const Pagination = ({ list }) => {
           <li className="page-item">
             <button
               className="page-link"
-              disabled={ui.curPage === countPage}
+              disabled={ui.curPage === countPages}
               onClick={() => dispatch(nextPage())}
             >
               <FaChevronRight />

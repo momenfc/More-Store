@@ -11,10 +11,10 @@ const SingleProduct = ({ product }) => {
   const inCart = !!cartList.find((pro) => pro.id === id);
 
   return (
-    <div className="col-sm">
+    <div className="col ">
       <div
-        className="card m-auto px-2 pt-2"
-        style={{ minWidth: "16rem", maxWidth: "18rem", height: "100%" }}
+        className="card m-auto px-2 pt-2 h-100"
+        style={{ minWidth: "18rem" }}
       >
         <Link to={`/product/${id}`}>
           <img
